@@ -7,7 +7,8 @@ lazy val commonSettings = Seq(
 lazy val root = (project in file(".")).
   settings(commonSettings: _*).
   settings(
-    name := "searchbird"
+    name := "searchbird",
+    mainClass in Compile := Some("com.feynmanliang.searchbird.Main")
   )
 
 resolvers += "Twitter Maven repo" at "https://maven.twttr.com/"
