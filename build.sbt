@@ -7,7 +7,7 @@ lazy val commonSettings = Seq(
 lazy val root = (project in file(".")).
   settings(commonSettings: _*).
   settings(
-    name := "searchbird",
+    name := "searchbird-2.0",
     mainClass in Compile := Some("com.feynmanliang.searchbird.Main")
   )
 
