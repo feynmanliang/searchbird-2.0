@@ -34,7 +34,7 @@ class SearchbirdServiceImpl(config: SearchbirdServiceConfig) extends SearchbirdS
     // remove any references to the old document in the reverse index.
     if (forward.containsKey(key)) {
       synchronized {
-        forward.get(key).split(" ").toSet foreach { token =>
+        forward.get(key).split(" ").toSet foreach { (token: String) =>
           val current = reverse.get(token) match {
             case null => Set[String]()
             case value => value
@@ -49,7 +49,7 @@ class SearchbirdServiceImpl(config: SearchbirdServiceConfig) extends SearchbirdS
 
     // add the tokens of document to inverted index.
     synchronized {
-      value.split(" ").toSet foreach { token =>
+      value.split(" ").toSet foreach { (token: String) =>
         val current = reverse.get(token) match {
           case null => Set[String]()
           case value => value
