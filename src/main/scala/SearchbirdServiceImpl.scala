@@ -3,7 +3,7 @@ package com.feynmanliang.searchbird
 import com.twitter.logging.Logger
 import com.twitter.util.Future
 import config.SearchbirdServiceConfig
-import thrift.{SearchbirdException, SearchbirdService}
+import com.feynmanliang.searchbird.thrift.{SearchbirdException, SearchbirdService}
 
 import scala.collection.mutable
 
@@ -11,7 +11,7 @@ class SearchbirdServiceImpl(config: SearchbirdServiceConfig) extends SearchbirdS
   val serverName = "Searchbird"
   val thriftPort = config.thriftPort
   val tracerFactory = config.tracerFactory
-  val log = Logger.get(getClass)
+  private val log = Logger.get(getClass)
 
   val database = new mutable.HashMap[String, String]()
 
