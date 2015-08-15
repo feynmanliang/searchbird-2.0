@@ -1,3 +1,5 @@
+package com.feynmanliang.searchbird
+
 import com.twitter.finagle.builder.ClientBuilder
 import com.twitter.finagle.thrift.ThriftClientFramedCodec
 import org.apache.thrift.protocol.TBinaryProtocol

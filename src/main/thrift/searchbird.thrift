@@ -1,3 +1,5 @@
+namespace java com.feynmanliang.searchbird.thrift
+
 /**
  * It's considered good form to declare an exception type for your service.
  * Thrift will serialize and transmit them transparently.
