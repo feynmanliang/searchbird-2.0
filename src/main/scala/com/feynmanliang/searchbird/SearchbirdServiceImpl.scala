@@ -2,12 +2,10 @@ package com.feynmanliang.searchbird
 
 import java.util.concurrent.ConcurrentHashMap
 
+import com.feynmanliang.searchbird.config.SearchbirdServiceConfig
+import com.feynmanliang.searchbird.thrift.{SearchbirdException, SearchbirdService}
 import com.twitter.logging.Logger
 import com.twitter.util.Future
-import config.SearchbirdServiceConfig
-import com.feynmanliang.searchbird.thrift.{SearchbirdException, SearchbirdService}
-
-import scala.collection.mutable
 
 class SearchbirdServiceImpl(config: SearchbirdServiceConfig) extends SearchbirdService[Future] {
   val serverName = "Searchbird"

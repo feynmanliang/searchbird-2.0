@@ -1,0 +1,2 @@
+#!/bin/bash
+java -cp target/scala-2.11/searchbird-assembly-0.1-SNAPSHOT.jar com.feynmanliang.searchbird.SearchbirdConsoleClient ${1} ${2}
