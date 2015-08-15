@@ -7,10 +7,9 @@ import com.feynmanliang.searchbird.thrift.{SearchbirdException, SearchbirdServic
 
 import scala.collection.mutable
 
-class SearchbirdServiceImpl(config: SearchbirdServiceConfig) extends SearchbirdService.FutureIface {
+class SearchbirdServiceImpl(config: SearchbirdServiceConfig) extends SearchbirdService[Future] {
   val serverName = "Searchbird"
   val thriftPort = config.thriftPort
-  val tracerFactory = config.tracerFactory
   private val log = Logger.get(getClass)
 
   val database = new mutable.HashMap[String, String]()

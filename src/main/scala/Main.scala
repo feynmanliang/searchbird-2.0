@@ -9,8 +9,13 @@ object Main extends TwitterServer {
   def main(): Unit = {
     val config = new SearchbirdServiceConfig()
     val service = new SearchbirdServiceImpl(config)
-    val server = Thrift.serveIface("localhost:" + config.thriftPort, service)
+    val server = Thrift
+      .serveIface("localhost:" + config.thriftPort, service)
 
+    onExit {
+      server.close()
+      adminHttpServer.close()
+    }
     Await.ready(server)
     Await.ready(adminHttpServer)
   }
